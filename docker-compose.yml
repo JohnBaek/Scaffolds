@@ -16,6 +16,21 @@ services:
     environment:
       NODE_ENV: production
     ports:
-      - "8080:8080"
-    expose:
-      - "8080"
+      - "4000:4000"
+  proxy:
+    network_mode: host
+    image: scaffold/proxy/v1
+    build:
+      context: WebProject.Resources/WebProject.Resources.Nginx
+      dockerfile: ./Dockerfile
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
+          aux_addresses:
+            api: 10.5.0.5
+            ui: 10.5.0.6

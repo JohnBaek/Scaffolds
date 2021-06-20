@@ -5,7 +5,9 @@ RUN yarn install
 RUN yarn run build
 
 # production stage
-FROM nginx:stable-alpine as production-stage
-COPY --from=build-stage /app/dist /usr/share/nginx/html
-EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:lts-alpine as production-stage
+COPY --from=build-stage /app/dist /app/dist
+WORKDIR /app
+RUN npm install -g serve
+EXPOSE 4000
+CMD ["serve", "-s", "dist" ,"-l" , "4000"]
