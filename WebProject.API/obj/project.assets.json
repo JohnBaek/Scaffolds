@@ -75,6 +75,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "WebProject.Models.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/WebProject.Models.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebProject.Models.Core.dll": {}
+        }
       }
     }
   },
@@ -185,11 +195,17 @@
         "swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "WebProject.Models.Core/1.0.0": {
+      "type": "project",
+      "path": "../WebProject.Models/WebProject.Models.Core/WebProject.Models.Core.csproj",
+      "msbuildProject": "../WebProject.Models/WebProject.Models.Core/WebProject.Models.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Swashbuckle.AspNetCore >= 5.6.3"
+      "Swashbuckle.AspNetCore >= 5.6.3",
+      "WebProject.Models.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -216,7 +232,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/john/Sources/WebProject/WebProject.Models/WebProject.Models.Core/WebProject.Models.Core.csproj": {
+              "projectPath": "/Users/john/Sources/WebProject/WebProject.Models/WebProject.Models.Core/WebProject.Models.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
