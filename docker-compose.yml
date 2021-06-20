@@ -1,12 +1,19 @@
-# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
-
 version: '3.4'
 
 services:
-  webprojectapi:
-    image: scaffold/api
+  api:
+    image: scaffold/api/v1
     build:
       context: .
       dockerfile: WebProject.API/Dockerfile
     ports:
       - 5000:5000
+  ui:
+    image: scaffold/api/v1
+    build:
+      context: .
+      dockerfile: WebProject.UI/v1/Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:8080

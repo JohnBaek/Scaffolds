@@ -34,6 +34,17 @@
             "netCore": {
                 "appProject": "${workspaceFolder}/WebProject.API/WebProject.API.csproj"
             }
+        },
+        {
+            "name": "Docker Node.js Launch",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "platform": "node",
+            "node": {
+                "package": "${workspaceFolder}/WebProject.UI/v1/package.json",
+                "localRoot": "${workspaceFolder}/WebProject.UI/v1"
+            }
         }
     ]
 }

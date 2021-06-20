@@ -75,11 +75,16 @@
             "type": "docker-run",
             "label": "docker-run: debug",
             "dependsOn": [
-                "docker-build: debug"
+                "docker-build"
             ],
-            "dockerRun": {},
-            "netCore": {
-                "appProject": "${workspaceFolder}/WebProject.API/WebProject.API.csproj",
+            "dockerRun": {
+                "env": {
+                    "DEBUG": "*",
+                    "NODE_ENV": "development"
+                }
+            },
+            "node": {
+                "package": "${workspaceFolder}/WebProject.UI/v1/package.json",
                 "enableDebugging": true
             }
         },
@@ -87,11 +92,24 @@
             "type": "docker-run",
             "label": "docker-run: release",
             "dependsOn": [
-                "docker-build: release"
+                "docker-build"
             ],
-            "dockerRun": {},
-            "netCore": {
-                "appProject": "${workspaceFolder}/WebProject.API/WebProject.API.csproj"
+            "platform": "node",
+            "node": {
+                "package": "${workspaceFolder}/WebProject.UI/v1/package.json"
+            }
+        },
+        {
+            "type": "docker-build",
+            "label": "docker-build",
+            "platform": "node",
+            "dockerBuild": {
+                "dockerfile": "${workspaceFolder}/WebProject.UI/v1/Dockerfile",
+                "context": "${workspaceFolder}/WebProject.UI/v1",
+                "pull": true
+            },
+            "node": {
+                "package": "${workspaceFolder}/WebProject.UI/v1/package.json"
             }
         }
     ]
