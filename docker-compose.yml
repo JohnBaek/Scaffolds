@@ -9,11 +9,13 @@ services:
     ports:
       - 5000:5000
   ui:
-    image: scaffold/api/v1
+    image: scaffold/ui/v1
     build:
-      context: .
-      dockerfile: WebProject.UI/v1/Dockerfile
+      context: WebProject.UI/v1
+      dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
     ports:
-      - 3000:8080
+      - "8080:8080"
+    expose:
+      - "8080"
