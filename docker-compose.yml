@@ -6,8 +6,8 @@ services:
     build:
       context: .
       dockerfile: WebProject.API/Dockerfile
-    ports:
-      - 5000:5000
+    networks:
+        - scaffold
   ui:
     image: scaffold/ui/v1
     build:
@@ -15,22 +15,18 @@ services:
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
-    ports:
-      - "4000:4000"
+    networks:
+        - scaffold
   proxy:
-    network_mode: host
     image: scaffold/proxy/v1
     build:
       context: WebProject.Resources/WebProject.Resources.Nginx
       dockerfile: ./Dockerfile
+    networks:
+        - scaffold
+    ports:
+        - "80:80"
 
 networks:
-  vpcbr:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.5.0.0/16
-          gateway: 10.5.0.1
-          aux_addresses:
-            api: 10.5.0.5
-            ui: 10.5.0.6
+  scaffold:
+      driver: bridge
