@@ -12,7 +12,7 @@ namespace WebProject.API
     public class Program
     {   
         /// <summary>
-        /// Program entry point 
+        /// Program entry point
         /// </summary>
         /// <param name="args"></param>
         public static void Main(string[] args)
