@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:  
+  database:
+    image: scaffold/database/v1
+    build:
+      context: WebProject.Resources/WebProject.Resources.MariaDB
+      dockerfile: ./Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: skfdkfk12
+    ports:
+        - "3306:3306"
+networks:
+  scaffold:
+      driver: bridge
