@@ -26,6 +26,13 @@ services:
         - scaffold
     ports:
         - "8080:80"
+  database:
+    image: scaffold/database/v1
+    build:
+      context: WebProject.Resources/WebProject.Resources.MariaDB
+      dockerfile: ./Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: skfdkfk12
 
 networks:
   scaffold:
