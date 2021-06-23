@@ -1,15 +1,28 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace WebProject.API.Data
 {
-    // Configuration
-    // DI
-
     /// <summary>
     /// DbContext
     /// </summary>
     public class WebProjectDbContext : DbContext
     {
+        /// <summary>
+        /// Config
+        /// </summary>
+        /// <value></value>
+        private IConfiguration Configuration { get; init; }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="configuration"></param>
+        public WebProjectDbContext(IConfiguration configuration)
+        {
+            this.Configuration = configuration;
+        }
+
         /// <summary>
         /// OnConfiguring
         /// </summary>

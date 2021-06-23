@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
-
+using WebProject.API.Data;
 
 namespace WebProject.API
 {
@@ -31,7 +31,6 @@ namespace WebProject.API
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            
         }
 
         /// <summary>
@@ -40,10 +39,10 @@ namespace WebProject.API
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
-            // // Add MariaDB
-            // services.AddDbContext<ApplicationDbContext>(options => {
-
-            // });
+            // Add MariaDB
+            services.AddDbContext<WebProjectDbContext>(options => {
+                options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), ServerVersion.AutoDetect(Configuration.GetConnectionString("DefaultConnection")));
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

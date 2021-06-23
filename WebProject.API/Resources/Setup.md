@@ -7,7 +7,6 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.Extensions.Configuration
 # For Maria
 dotnet add package Pomelo.EntityFrameworkCore.MySql
-
 # Dotnet CLI
 dotnet tool install --global dotnet-ef
 dotnet tool update --global dotnet-ef
