@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-
 namespace WebProject.API.Data
 {
     /// <summary>
