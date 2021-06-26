@@ -5,6 +5,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Cosmos
 dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.Extensions.Configuration
+dotnet add package Microsoft.AspNetCore.HttpOverrides
 # For Maria
 dotnet add package Pomelo.EntityFrameworkCore.MySql
 # Dotnet CLI

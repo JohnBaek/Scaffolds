@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using WebProject.API.Data;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace WebProject.API
 {
@@ -44,6 +46,9 @@ namespace WebProject.API
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), ServerVersion.AutoDetect(Configuration.GetConnectionString("DefaultConnection")));
             });
 
+            // DI
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -70,10 +75,13 @@ namespace WebProject.API
                 });
             }
 
+            // For remote IP
+            app.UseForwardedHeaders(new ForwardedHeadersOptions {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
