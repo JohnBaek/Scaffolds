@@ -67,24 +67,24 @@ namespace WebProject.API.Controllers.v1
 
             try
             {
-                // // If Contains Header
-                // if(_HttpContext.Request.Headers != null)
-                // {
-                //     // Get Forwarded Headers
-                //     string xForwardedHeader = _HttpContext.Request.Headers["X-Forwarded-For"];
-                //     string xProtoHeader = _HttpContext.Request.Headers["X-Forwarded-Proto"];
+                // If Contains Header
+                if(_HttpContext.Request.Headers != null)
+                {
+                    // Get Forwarded Headers
+                    string xForwardedHeader = _HttpContext.Request.Headers["X-Forwarded-For"];
+                    string xProtoHeader = _HttpContext.Request.Headers["X-Forwarded-Proto"];
 
-                //     if(xForwardedHeader != null)
-                //         response.Data = xForwardedHeader;
+                    if(!string.IsNullOrEmpty(xForwardedHeader))
+                        response.Data = xForwardedHeader;
 
-                //     if(xProtoHeader != null)
-                //         response.Data = xProtoHeader;
+                    if(!string.IsNullOrEmpty(xProtoHeader))
+                        response.Data = xProtoHeader;
                                         
-                //     if(xForwardedHeader == null && xProtoHeader == null)
-                //         response.Data = _HttpContext.Connection.RemoteIpAddress.ToString();
-                // }
+                    if(xForwardedHeader == null && xProtoHeader == null)
+                        response.Data = _HttpContext.Connection.RemoteIpAddress.ToString();
 
-                response.Data = _HttpContext.Connection.RemoteIpAddress.ToString();
+                    response.Data = $"xForwardedHeader : {xForwardedHeader} xProtoHeader : {xProtoHeader} others : {_HttpContext.Connection.RemoteIpAddress.ToString()}";
+                }
             }
             catch (System.Exception ex)
             {
