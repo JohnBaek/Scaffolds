@@ -1,0 +1,12 @@
+{
+	"repositoryUrl": "",
+	"issueTrackerUrl": "https://project.cs.nl/issue/{0}",
+	"issueNumberRegex": "[a-zA-Z]{1,4}-\\d{1,4}",
+	"changeSets": [
+		{
+			"date": "2021-07-08T04:32:14.4985622Z",
+			"name": "",
+			"changes": []
+		}
+	]
+}
