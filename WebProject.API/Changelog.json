@@ -4,6 +4,17 @@
 	"issueNumberRegex": "[a-zA-Z]{1,4}-\\d{1,4}",
 	"changeSets": [
 		{
+			"date": "2021-07-08T04:35:24.7005367Z",
+			"name": "",
+			"changes": [
+				{
+					"category": "Feature",
+					"hash": "2f734e0d94b6903f7a92c3f77d03647eda87175b",
+					"message": "Changelog"
+				}
+			]
+		},
+		{
 			"date": "2021-07-08T04:32:14.4985622Z",
 			"name": "",
 			"changes": []
