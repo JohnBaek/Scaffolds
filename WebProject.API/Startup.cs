@@ -75,7 +75,7 @@ namespace WebProject.API
                 });
             }
 
-            // For remote IP
+            // For remote IP Reverse Proxy 
             app.UseForwardedHeaders(new ForwardedHeadersOptions {
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
