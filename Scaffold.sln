@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProject.Models.Core", "W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProject.API.Tests", "WebProject.API.Tests\WebProject.API.Tests.csproj", "{17C8216E-D5AF-4875-A823-E4C41E9D1195}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebProject.Resouces", "WebProject.Resouces", "{1F0B550C-FB69-4028-BAF9-9A39E52478A6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebProject.Global", "WebProject.Global", "{1F0B550C-FB69-4028-BAF9-9A39E52478A6}"
 ProjectSection(SolutionItems) = preProject
 	CHANGELOG = CHANGELOG
 	docker-compose.develop.yml = docker-compose.develop.yml
