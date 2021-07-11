@@ -6,6 +6,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.Extensions.Configuration
 dotnet add package Microsoft.AspNetCore.HttpOverrides
+dotnet tool install --global dotnet-typegen --version 2.4.9
 # For Maria
 dotnet add package Pomelo.EntityFrameworkCore.MySql
 # Dotnet CLI

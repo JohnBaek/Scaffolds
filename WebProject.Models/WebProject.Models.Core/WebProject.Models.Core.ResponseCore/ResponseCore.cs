@@ -1,8 +1,9 @@
+using TypeGen.Core.TypeAnnotations;
 using WebProject.Models.Core.Interfaces;
 using WebProject.Models.Core.Enums;
-
 namespace WebProject.Models.Core.ResponseCore
 {
+    [ExportTsClass]
     public class ResponseCore<T> : IResponseCore where T : class
     {
         /// <summary>

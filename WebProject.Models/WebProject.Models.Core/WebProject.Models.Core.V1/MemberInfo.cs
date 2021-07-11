@@ -1,9 +1,8 @@
 using System.ComponentModel.DataAnnotations;
-using WebProject.Models.Core.Interfaces;
-using WebProject.Models.Core.Enums;
 
 namespace WebProject.Models.Core.V1
 {
+
     public class MemberInfo
     {
         /// <summary>
